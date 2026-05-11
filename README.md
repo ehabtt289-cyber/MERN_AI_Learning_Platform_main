@@ -226,6 +226,8 @@ VITE_API_URL=http://localhost:5000
 
 ---
 
+> **Note:** A portion of this project was developed using vibe coding / AI-assisted development.
+
 # Deployment
 
 - Frontend deployed using Vercel
