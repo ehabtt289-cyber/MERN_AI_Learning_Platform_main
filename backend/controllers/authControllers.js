@@ -24,12 +24,12 @@ export const register = async (req, res) => {
     try {
         const { username, email, password } = req.body
 
-        // Validate input
+        
         if (!username || !email || !password) {
             return res.status(400).json({ error: "Please provide all required fields" })
         }
 
-        // Check if user already exists
+        
         const existingUser = await User.findOne({ email })
         if (existingUser) {
             return res.status(400).json({ error: "User already exists with this email" })
@@ -211,3 +211,4 @@ export const changePassword = async (req, res, next) => {
         next(error)
     }
 }
+//ehab naser
