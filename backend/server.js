@@ -21,10 +21,9 @@ import progressRoutes from "./routes/progressRoutes.js"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// Initialize express app
+
 const app = express()
 
-// Connect to MongoDB
 connectDB()
 
 // Compress all responses
@@ -39,7 +38,7 @@ if (process.env.FRONTEND_URL) {
     allowedOrigins.push(process.env.FRONTEND_URL);
 }
 
-// Add the default regex for vercel preview URLs
+
 allowedOrigins.push(/\.vercel\.app$/);
 
 app.use(
@@ -81,12 +80,12 @@ app.use("/ai", aiRoutes)
 app.use("/progress", progressRoutes)
 
 
-// Static uploads (if needed)
+
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 app.use(errorHandler)
 
 
-// Start server
+
 const PORT = process.env.PORT || 8000
 app.get("/", (req, res) => {
     res.status(200).send("API Server is running");
